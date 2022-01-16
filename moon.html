@@ -1,0 +1,47 @@
+<html>
+<head>
+<link rel="stylesheet" href="style2.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+</head>
+<body>
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
+  <section>
+	<img src="astronaut.png" id="naut" style="top: 400px; left:975px; width: 50px; height: auto;" data-speed="-7" class="shape"/>
+    <img src="2.png" style="top: 200px; left:300px;" data-speed="5" class="shape"/>
+	<img src="3.png" style="top: 600px; left:100px;" data-speed="-7" class="shape"/>
+	<img src="4.png" style="top: 100px; left:900px;" data-speed="6" class="shape"/>
+	<img src="5.png" style="top: 500px; left:300px;" data-speed="-5" class="shape"/>
+    <img src="6.png" style="top: 700px; left:800px;" data-speed="8" class="shape"/>    
+	<img src="7.png" style="top: 700px; left:1000px;" data-speed="-7" class="shape"/>
+    <img src="8.png" style="top: 700px; left:1500px;" data-speed="9" class="shape"/>
+    <img src="9.png" style="top: 200px; left:300px;" data-speed="-6" class="shape"/>
+    <img src="10.png" style="top: 50px; left:600px;" data-speed="7" class="shape"/>
+	<img src="11.png" style="top: 400px; left:1700px;" data-speed="-5" class="shape"/>
+	<img src="12.png" style="top: 400px; left:25px;" data-speed="6" class="shape"/>
+    <img src="Moon.png" id="moon" style="top: 300px; left:800px; width: 400px; height: auto;" data-speed="5" class="layer"/>
+	<img src="1.png" style="top: 100px; left:-200px;" data-speed="-5" class="shape"/>
+	<img src="5.png" style="top: 200px; left:1300px;" data-speed="8" class="shape"/>
+	<img src="8.png" style="top: 100px; left:500px;" data-speed="-9" class="shape"/>
+	<img src="7.png" style="top: 100px; left:1000px;" data-speed="6" class="shape"/>
+    <img src="9.png" style="top: 550px; left:1000px;" data-speed="-8" class="shape"/>
+	
+  </section>
+	<script type="text/javascript">
+		document.addEventListener("mousemove", parallax);
+		function parallax(e){
+			this.querySelectorAll('.shape').forEach(layer => {
+				const speed = layer.getAttribute('data-speed')
+				
+				const x = (window.innerWidth - e.pageX*speed)/100
+				const y = (window.innerHeight - e.pageY*speed)/100
+				layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
+      })
+    }
+    </script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+</body>
+</html>
